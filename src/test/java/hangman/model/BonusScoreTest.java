@@ -63,4 +63,5 @@ public class BonusScoreTest {
 				assertEquals(e.getMessage(), "Los argumentos deben ser positivos.");
 			} 
 	}
+	
 }

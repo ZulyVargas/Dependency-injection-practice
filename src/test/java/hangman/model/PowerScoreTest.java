@@ -25,6 +25,7 @@ import org.junit.*;
  *
  */
 public class PowerScoreTest {
+	
 	@Test
 	public void pruebaNegativosPowerScore(){
 		try {
@@ -66,5 +67,5 @@ public class PowerScoreTest {
 			assertEquals(e.getMessage(), "Los argumentos deben ser positivos.");
 		} 
 	}
-	
+
 }
