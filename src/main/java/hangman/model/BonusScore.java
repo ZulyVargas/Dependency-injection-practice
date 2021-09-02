@@ -6,7 +6,7 @@ public class BonusScore implements GameScore {
 	/**
 	 *Calcula el puntaje total segun el conteo de letras correctas e incorrectas .
 	 *@param correctCount - Número de letras correctas.
-	 *@param incorrectCount - Número de letras incorrectas.
+	 *@param incorrectCount - Número de letras incorrectas. 
 	 *
 	 */
 	public int calculateScore(int correctCount, int incorrectCount) {
