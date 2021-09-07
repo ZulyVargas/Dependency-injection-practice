@@ -24,7 +24,7 @@ public class GameModel {
     private LocalDateTime dateTime;
     private int gameScore;
     private int[] lettersUsed;
-    
+    private GameScore gS;
     
     private HangmanDictionary dictionary;
     
@@ -34,14 +34,14 @@ public class GameModel {
     
     
    
-    public GameModel(HangmanDictionary dictionary){
+    public GameModel(HangmanDictionary dictionary,GameScore gameScore){
         //this.dictionary = new EnglishDictionaryDataSource();
         this.dictionary=dictionary;
         randomWord = selectRandomWord();
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
         correctCount = 0;
-        gameScore = 100;
+        this.gS = gameScore;
         
     }
     
@@ -52,7 +52,7 @@ public class GameModel {
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
         correctCount = 0;
-        gameScore = 100;
+        gameScore = gS.calculateScore(correctCount, incorrectCount);
     }
 
     //setDateTime
@@ -74,10 +74,11 @@ public class GameModel {
         }
         if(positions.size() == 0){
             incorrectCount++;
-            gameScore -= 10;
+            //gameScore -= 10;
         } else {
             correctCount += positions.size();
         }
+        
         return positions;
         
     }
@@ -91,14 +92,14 @@ public class GameModel {
 
     //setScore
     //purpose: sets score value to points
-    public void setScore(int score) {
-        this.gameScore = score;
+    public void setScore(int gameScore) {
+        this.gameScore = gameScore;
     }
     
     //getScore
     //purpose: returns current score value
-    public int getScore() {
-        return gameScore;
+    public GameScore getScore() {
+        return gS;
     }
 
     //name: selectRandomWord()
@@ -124,7 +125,7 @@ public class GameModel {
     //method: getGameScore
     //purpose: return current score
     public int getGameScore() {
-        return gameScore;
+        return gS.calculateScore(correctCount, incorrectCount);
     }
 
     //method: setGameScore

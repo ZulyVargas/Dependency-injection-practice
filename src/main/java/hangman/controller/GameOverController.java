@@ -52,7 +52,6 @@ public class GameOverController {
         panel.getMenuButton().setText(model.getMenuButtonText());
         panel.getResetButton().setText(model.getNewGameButtonText());
         panel.getScoreLabel().setText(lan.getFinalScorelabel() + String.valueOf(model.getScore()));
-        
         panel.getMenuButton().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -72,7 +71,7 @@ public class GameOverController {
         panel.addAncestorListener(new AncestorListener(){
             @Override
             public void ancestorAdded(AncestorEvent event) {
-                panel.getScoreLabel().setText(lan.getFinalScorelabel() + gameControllerReference.getModel().getScore());
+                panel.getScoreLabel().setText(lan.getFinalScorelabel() + gameControllerReference.getModel().getGameScore());
             }
 
             @Override
@@ -80,8 +79,8 @@ public class GameOverController {
             }
 
             @Override
-            public void ancestorMoved(AncestorEvent event) {
-            }
+            public void ancestorMoved(AncestorEvent event) { 
+            } 
             
         });
     }
