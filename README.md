@@ -7,4 +7,5 @@
 
 
 El comando empleado para ejecutar el proyecto es : **mvn exec:java -Dexec.mainClass="hangman.SwingProject"**
+
 El comando empleado para la visualización de las pruebas es: **mvn package**
